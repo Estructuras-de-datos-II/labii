@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace HuffmanTest
+namespace Laboratorio2_KB_CL
 {
     class NodoHuffman : IComparable
     {

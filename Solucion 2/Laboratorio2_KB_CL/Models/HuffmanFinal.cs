@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-namespace HuffmanTest
+namespace Laboratorio2_KB_CL
 {
     public class HuffmanFinal
     {

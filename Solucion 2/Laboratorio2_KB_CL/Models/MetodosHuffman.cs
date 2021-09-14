@@ -7,7 +7,7 @@ using System.IO;
 using System.Collections;
 
 
-namespace HuffmanTest
+namespace Laboratorio2_KB_CL
 {
     class MetodosHuffman
     {

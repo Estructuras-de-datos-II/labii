@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
-namespace HuffmanTest
+namespace Laboratorio2_KB_CL
 {
     class Monticulo<T> where T : IComparable
     {
