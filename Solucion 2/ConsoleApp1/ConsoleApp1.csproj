@@ -1,12 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj" />
+    <ProjectReference Include="..\Libreria ED II F\Libreria ED II F.csproj" />
   </ItemGroup>
 
+Libreria ED IILibreria_ED_II    <ProjectReference Include="..\..\..\LAB-I-DEF\Soluciones\Libreria ED II\Libreria_ED_II.csproj" />
 </Project>
