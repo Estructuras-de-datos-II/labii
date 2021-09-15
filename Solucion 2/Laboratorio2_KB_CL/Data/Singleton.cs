@@ -10,14 +10,17 @@ namespace Laboratorio2_KB_CL.Data
     {
         private readonly static Singleton _instance = new Singleton();
         public string mpdescomprimir;
-        public string textoparacomprimir;
+        public string textoparacomprimir="";
         public string mensajecomp;
         public string mensajedescomp;
+        public List<compress> compresslist { get; set; }
+
         public HuffmanFinal.Comprimir comp;
+     
 
         private Singleton()
         {
-            comp = new HuffmanFinal.Comprimir(textoparacomprimir);
+          
         }
 
         public static Singleton Instance

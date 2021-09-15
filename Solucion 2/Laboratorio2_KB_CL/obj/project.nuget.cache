@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "R3ztXYc7ggDlJrQpJXcSR4dEQZqCRw+BbXvOr/1Szaj2/IktclW3EMBawJoR3XyRM9aJm5GbAh+zLPZhxE5r5g==",
+  "dgSpecHash": "Xa38DTdGO9Wlm9wJdfqgzIQUEw3q4C4Q9/KE6Wb4a6PevKqelQn72j6/Vi+NAHCBlUjK8r49G05WnEVt0R4GqQ==",
   "success": true,
   "projectFilePath": "E:\\Documentos\\Github\\labii\\Solucion 2\\Laboratorio2_KB_CL\\Laboratorio2_KB_CL.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\marti\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
