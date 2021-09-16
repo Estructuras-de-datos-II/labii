@@ -80,7 +80,7 @@ namespace Laboratorio2_KB_CL.Controllers
                 Historial objHistorial = new Historial()
                 {
                     nombre = "Nombre del archivo: " + nombrearchivofinal,
-                    nombreYruta = "Nombre del archivo final" + nombrearchivofinal + ".huff" + " Ruta: desktop",
+                    nombreYruta = "Nombre del archivo final: " + nombrearchivofinal + ".huff" + " Ruta: desktop",
                     razonDeCompresion = "Razón de compresión: " + SrazonDeCompresion + "%",
                     factorDeCompresion = "Factor de compresión: " + SfactorDeCompresion,
                     porcentajeDeReduccion = "Porcentaje de reducción: " + SporcentajeDeReduccion + "%",
