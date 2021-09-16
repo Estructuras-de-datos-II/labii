@@ -70,11 +70,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Documentos\\Github\\labii\\Solucion 2\\Laboratorio2_KB_CL\\Laboratorio2_KB_CL.csproj",
+      "projectUniqueName": "F:\\Documentos\\Github\\labii\\Solucion 2\\Laboratorio2_KB_CL\\Laboratorio2_KB_CL.csproj",
       "projectName": "Laboratorio2_KB_CL",
-      "projectPath": "E:\\Documentos\\Github\\labii\\Solucion 2\\Laboratorio2_KB_CL\\Laboratorio2_KB_CL.csproj",
+      "projectPath": "F:\\Documentos\\Github\\labii\\Solucion 2\\Laboratorio2_KB_CL\\Laboratorio2_KB_CL.csproj",
       "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
-      "outputPath": "E:\\Documentos\\Github\\labii\\Solucion 2\\Laboratorio2_KB_CL\\obj\\",
+      "outputPath": "F:\\Documentos\\Github\\labii\\Solucion 2\\Laboratorio2_KB_CL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -95,8 +95,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "E:\\Documentos\\Github\\labii\\Solucion 2\\hoffmanlibreria\\hoffmanlibreria.csproj": {
-              "projectPath": "E:\\Documentos\\Github\\labii\\Solucion 2\\hoffmanlibreria\\hoffmanlibreria.csproj"
+            "F:\\Documentos\\Github\\labii\\Solucion 2\\hoffmanlibreria\\hoffmanlibreria.csproj": {
+              "projectPath": "F:\\Documentos\\Github\\labii\\Solucion 2\\hoffmanlibreria\\hoffmanlibreria.csproj"
             }
           }
         }

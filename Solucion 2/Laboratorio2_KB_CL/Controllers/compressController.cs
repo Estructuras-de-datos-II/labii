@@ -37,21 +37,43 @@ namespace Laboratorio2_KB_CL.Controllers
 
         // POST api/<compressController>
         [HttpPost]
-        public IActionResult PostFileCompress([FromForm] IFormFile File, [FromRoute] string name)
+        public IActionResult PostFileCompress([FromForm] IFormFile file, [FromRoute] string name)
         {
-            using var archivo = new MemoryStream();
+            using var archivotexto = new MemoryStream();
             try
             {
-                File.CopyToAsync(archivo);
-                var coleccion = Encoding.UTF8.GetString(archivo.ToArray()); //pasa el texto a cadena 
-                Byte[] texto_bytes = utf8.GetBytes(coleccion); // texto a bytes 
-                string texto = "";
-                texto = Encoding.UTF8.GetString(texto_bytes);
-                Singleton.Instance.comp = new HuffmanFinal.Comprimir(texto);
                 
-                return Ok();
+                string nombrearchiv = file.FileName;
+                string nombrearchivofinal = nombrearchiv.Split(".").First();
+                file.CopyToAsync(archivotexto);
+                var textomientras = Encoding.UTF8.GetString(archivotexto.ToArray());
+
+                
+                Byte[] stringbytes = utf8.GetBytes(textomientras); 
 
 
+                string textoparacomprimir = "";
+
+        
+                textoparacomprimir = Encoding.UTF8.GetString(stringbytes);
+
+                Singleton.Instance.comp = new HuffmanFinal.Comprimir(textoparacomprimir);
+                string textocomprimido = Singleton.Instance.comp.mensajeComprimido;
+                
+                
+                
+               
+
+                // Set a variable to the Documents path.
+                string docPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                // Write the string array to a new file named "WriteLines.txt".
+                using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, nombrearchivofinal + ".huff")))
+                {
+
+                    outputFile.Write(textocomprimido);
+                }
+                return Created("", textocomprimido);
             }
             catch (Exception)
             {

@@ -16,7 +16,7 @@ namespace Laboratorio2_KB_CL.Data
         public List<compress> compresslist { get; set; }
 
         public HuffmanFinal.Comprimir comp;
-     
+        public HuffmanFinal.Descomprimir descomp;
 
         private Singleton()
         {
