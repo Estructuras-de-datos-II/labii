@@ -60,7 +60,7 @@ namespace Laboratorio2_KB_CL
                 cont--;
             }
             listaDeNodos2 = monticulo.valores;
-            Console.ReadKey();
+           
         }
         //metodo neutro
         public void N_definirCodigoBinario(string codigoB, NodoHuffman nodos)
