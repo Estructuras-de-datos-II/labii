@@ -73,6 +73,19 @@ namespace Laboratorio2_KB_CL.Controllers
 
                     outputFile.Write(textocomprimido);
                 }
+
+                double SrazonDeCompresion = Convert.ToDouble((Convert.ToDouble(Singleton.Instance.comp.contadorFinal) / Convert.ToDouble(textomientras.Length)) * 100);
+                double SfactorDeCompresion = Convert.ToDouble(100 / SrazonDeCompresion);
+                double SporcentajeDeReduccion = Convert.ToDouble(100 - SrazonDeCompresion);
+                Historial objHistorial = new Historial()
+                {
+                    nombre = "Nombre del archivo: " + nombrearchivofinal,
+                    nombreYruta = "Nombre del archivo final" + nombrearchivofinal + ".huff" + " Ruta: desktop",
+                    razonDeCompresion = "Razón de compresión: " + SrazonDeCompresion + "%",
+                    factorDeCompresion = "Factor de compresión: " + SfactorDeCompresion,
+                    porcentajeDeReduccion = "Porcentaje de reducción: " + SporcentajeDeReduccion + "%",
+                };
+                Singleton.Instance.historial.Add(objHistorial);
                 return Created("", textocomprimido);
             }
             catch (Exception)

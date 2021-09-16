@@ -13,7 +13,7 @@ namespace Laboratorio2_KB_CL.Data
         public string textoparacomprimir="";
         public string mensajecomp;
         public string mensajedescomp;
-        public List<compress> compresslist { get; set; }
+        public List<Historial> historial = new List<Historial>();
 
         public HuffmanFinal.Comprimir comp;
         public HuffmanFinal.Descomprimir descomp;

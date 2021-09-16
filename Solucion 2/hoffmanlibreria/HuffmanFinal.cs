@@ -15,6 +15,7 @@ namespace Laboratorio2_KB_CL
             List<NodoHuffman> listaDeNodos2 = null;
             MetodosHuffman MHF = new MetodosHuffman();
             public string mensajeComprimido = "";
+            public int contadorFinal = 0;
 
             public Comprimir(string mensajeAcomprimir)
             {
@@ -37,7 +38,7 @@ namespace Laboratorio2_KB_CL
                     MHF.C_convertirDecaAsc(listaNumerosD, ref listaSimbolosAsc, listaDeNodos, ref listaFrecuenciasAsc);
 
                     string mensajeFinal = "";
-                    mensajeComprimido = MHF.C_mensajeFinal(ref mensajeFinal, listaSimbolosAsc, listaDeNodos, listaFrecuenciasAsc);
+                    mensajeComprimido = MHF.C_mensajeFinal(ref mensajeFinal, listaSimbolosAsc, listaDeNodos, listaFrecuenciasAsc,ref contadorFinal);
                                                                                                
             }
         }

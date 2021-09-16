@@ -143,18 +143,21 @@ namespace Laboratorio2_KB_CL
             }
         }
         //metodo de compresion 
-        public string C_mensajeFinal(ref string mensajeFinal, List<char> listaSimbolsAsc, List<NodoHuffman> listaDeNodos, List<char> listaFrecuenciasAsc)
+        public string C_mensajeFinal(ref string mensajeFinal, List<char> listaSimbolsAsc, List<NodoHuffman> listaDeNodos, List<char> listaFrecuenciasAsc,ref int contadorFinal)
         {
             for (int i = 0; i < listaDeNodos.Count; i++)
             {
                 mensajeFinal += listaDeNodos[i].identificador + "[" + listaFrecuenciasAsc[i] + "]";
+                contadorFinal++;
             }
 
             for (int i = 0; i < listaSimbolsAsc.Count; i++)
             {
                 mensajeFinal += "[" + listaSimbolsAsc[i] + "]";
+                contadorFinal++;
             }
 
+            contadorFinal = contadorFinal + listaDeNodos.Count;
             return mensajeFinal;
         }
 
