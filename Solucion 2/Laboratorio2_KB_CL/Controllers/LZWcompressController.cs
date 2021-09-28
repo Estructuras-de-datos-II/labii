@@ -31,7 +31,7 @@ namespace Laboratorio2_KB_CL.Controllers
         // GET api/<LZWcompressController>/5
         [HttpGet("{id}")]
         public string Get(int id)
-        {
+        { //si sirve
             return "value";
         }
 
