@@ -10,7 +10,7 @@ using System.Threading;
 using System.Security.Cryptography;
 using System.Net;
 
-namespace hoffmanlibreria
+namespace Laboratorio2_KB_CL
 {
     public class LZW
     {

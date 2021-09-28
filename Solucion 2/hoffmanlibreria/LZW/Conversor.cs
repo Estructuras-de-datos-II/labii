@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 //codigo de ayuda conseguido en internet
-namespace hoffmanlibreria
+namespace Laboratorio2_KB_CL
 {
     class Conversor
     {
