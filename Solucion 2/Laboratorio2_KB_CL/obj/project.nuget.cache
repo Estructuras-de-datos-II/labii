@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "MCTrLmrhcY1iofiW4yNzmKM3I36ZQMs2a251wWjilL1tydxlQzPNM05bwX1RCSV+3OE72dpXZzBXMQfpKrpZUA==",
+  "dgSpecHash": "urxlWktHA3U6fRBqicylPVydgqo/wltQuprRzMLM544Me7fhXT8E+7ubV9bgDbazVX0aRPZ0i3s8if7zsZYveQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Carlos Laparra\\Documents\\Cuarto ciclo\\Estructuras de datos LAB\\Soluciones\\labii\\Solucion 2\\Laboratorio2_KB_CL\\Laboratorio2_KB_CL.csproj",
+  "projectFilePath": "F:\\Documentos\\Github\\labii\\Solucion 2\\Laboratorio2_KB_CL\\Laboratorio2_KB_CL.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Carlos Laparra\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\marti\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }
