@@ -21,6 +21,12 @@ namespace Laboratorio2_KB_CL.Controllers
     public class compressController : ControllerBase
     {
         Encoding utf8 = Encoding.UTF8;
+        
+        public string byteto(byte[] data)
+        {
+            char[] characters = data.Select(b => (char)b).ToArray();
+            return new string(characters);
+        }
         // GET: api/<compressController>
         [HttpGet]
         public IEnumerable<string> Get()
@@ -39,23 +45,46 @@ namespace Laboratorio2_KB_CL.Controllers
         [HttpPost]
         public IActionResult PostFileCompress([FromForm] IFormFile file, [FromRoute] string name)
         {
-            using var archivotexto = new MemoryStream();
+            string bufferstring = "";
+            
+            byte[] buffer = new byte[0];
+            
+
+            using (MemoryStream archivotexto = new MemoryStream())
+               
             try
             {
-                
-                string nombrearchiv = file.FileName;
-                string nombrearchivofinal = nombrearchiv.Split(".").First();
-                file.CopyToAsync(archivotexto);
-                var textomientras = Encoding.UTF8.GetString(archivotexto.ToArray());
+
+                    string nombrearchiv = file.FileName;
+                    string nombrearchivofinal = nombrearchiv.Split(".").First();
+                    var textomientras = Encoding.UTF8.GetString(archivotexto.ToArray());
+
+                  
+                    var bytesarray = archivotexto.ToArray();
+                    file.CopyToAsync(archivotexto);
+
 
                 
-                Byte[] stringbytes = utf8.GetBytes(textomientras); 
+
+                    using var leer = new BinaryReader(archivotexto);
+                    archivotexto.Position = 0;
+
+                    while (archivotexto.Position < archivotexto.Length)
+                    {
+                         buffer = leer.ReadBytes(10000);
+                        bufferstring = bufferstring+byteto(buffer);
 
 
-                string textoparacomprimir = "";
+                    }
 
-        
-                textoparacomprimir = Encoding.UTF8.GetString(stringbytes);
+                   
+
+
+
+                    string textoparacomprimir = bufferstring;
+
+
+                   
 
                 Singleton.Instance.comp = new HuffmanFinal.Comprimir(textoparacomprimir);
                 string textocomprimido = Singleton.Instance.comp.mensajeComprimido;

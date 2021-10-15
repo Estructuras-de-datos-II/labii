@@ -21,6 +21,11 @@ namespace Laboratorio2_KB_CL.Controllers
     public class descompressController : ControllerBase
     {
         Encoding utf8 = Encoding.UTF8;
+        public string byteto(byte[] data)
+        {
+            char[] characters = data.Select(b => (char)b).ToArray();
+            return new string(characters);
+        }
         // GET: api/<descompressController>
         [HttpGet]
         public IEnumerable<string> Get()
