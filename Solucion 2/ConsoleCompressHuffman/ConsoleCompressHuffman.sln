@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleCompressHuffman", "ConsoleCompressHuffman\ConsoleCompressHuffman.csproj", "{A7DED7EB-7FA2-456B-B355-62E2D5762BE2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Compress", "..\Compress\Compress\Compress.csproj", "{E9ECFFCD-915A-4F99-ADC1-6F1B85F7BCCA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7DED7EB-7FA2-456B-B355-62E2D5762BE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7DED7EB-7FA2-456B-B355-62E2D5762BE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7DED7EB-7FA2-456B-B355-62E2D5762BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7DED7EB-7FA2-456B-B355-62E2D5762BE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9ECFFCD-915A-4F99-ADC1-6F1B85F7BCCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9ECFFCD-915A-4F99-ADC1-6F1B85F7BCCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9ECFFCD-915A-4F99-ADC1-6F1B85F7BCCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9ECFFCD-915A-4F99-ADC1-6F1B85F7BCCA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {28D11E3E-59C0-4BED-B3C6-338B0BAE51B7}
+	EndGlobalSection
+EndGlobal
