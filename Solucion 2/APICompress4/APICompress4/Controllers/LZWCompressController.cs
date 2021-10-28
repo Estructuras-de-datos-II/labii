@@ -24,20 +24,15 @@ namespace APICompress4.Controllers
             {
 
                 byte[] fileBytes = null;
-                byte[] filebytesantes = null;
                 using (var ms = new MemoryStream())
                 {
                     file.CopyTo(ms);
                     fileBytes = ms.ToArray();
-                    filebytesantes = ms.ToArray();
                     fileBytes = LZWCompresscs.LzwCompress(fileBytes);
                 }
                 saveFileAfter(fileBytes, path, name + ".lzw");
-                double SrazonDeCompresion = Convert.ToDouble(Convert.ToDouble(fileBytes.Length) / Convert.ToDouble(filebytesantes.Length) * 100);
-                double SfactorDeCompresion = Convert.ToDouble(100 / SrazonDeCompresion);
-                double SporcentajeDeReduccion = Convert.ToDouble(100 - SrazonDeCompresion);
 
-                Compression compress = new Compression(file.FileName, Path.Combine(path, newFileName), SrazonDeCompresion, SfactorDeCompresion, SporcentajeDeReduccion);
+                CompressionData compress = new CompressionData(file.FileName, Path.Combine(path, newFileName), 1, 2, fileBytes.Length / file.Length);
                 uploadedFiles.Add(compress);
 
             }

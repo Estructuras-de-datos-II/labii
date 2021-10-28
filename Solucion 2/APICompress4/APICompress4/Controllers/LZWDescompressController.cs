@@ -25,21 +25,16 @@ namespace APICompress4.Controllers
                 saveFile(file, path);
                 //compression
                 byte[] fileBytes = null;
-                byte[] filebytesantes = null;
                 using (var ms = new MemoryStream())
                 {
                     file.CopyTo(ms);
                     fileBytes = ms.ToArray();
-                    filebytesantes = ms.ToArray();
                     fileBytes = LZWCompresscs.LzwDecompress(fileBytes);
                 }
                 newFileName = file.FileName.Substring(0, file.FileName.IndexOf('.')) + ".txt";
                 saveFileAfter(fileBytes, path, newFileName);
-                double SrazonDeCompresion = Convert.ToDouble(Convert.ToDouble(fileBytes.Length) / Convert.ToDouble(filebytesantes.Length) * 100);
-                double SfactorDeCompresion = Convert.ToDouble(100 / SrazonDeCompresion);
-                double SporcentajeDeReduccion = Convert.ToDouble(100 - SrazonDeCompresion);
 
-                Compression compress = new Compression(file.FileName, Path.Combine(path, newFileName), SrazonDeCompresion, SfactorDeCompresion, SporcentajeDeReduccion);
+                CompressionData compress = new CompressionData(file.FileName, Path.Combine(path, newFileName), 1, 2, fileBytes.Length / file.Length);
                 uploadedFiles.Add(compress);
             }
             catch (Exception e)

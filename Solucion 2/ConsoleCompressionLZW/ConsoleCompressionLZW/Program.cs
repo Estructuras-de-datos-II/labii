@@ -1,12 +1,8 @@
 ﻿using Compress;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CompressCon
+namespace ConsoleCompressionLZW
 {
     class Program
     {
@@ -22,19 +18,21 @@ namespace CompressCon
 
                 byte[] compressedData = LZWCompresscs.LzwCompress(data);
                 string fileName = filePath.Substring(0, filePath.IndexOf('.'));
-                createFileE(compressedData ,fileName);
-                
+                createFileE(compressedData, fileName);
+
                 byte[] descompressedData = LZWCompresscs.LzwDecompress(compressedData);
                 createFileD(descompressedData, fileName);
+
+                Console.WriteLine("Compresion Completada. Presione una tecla para continuar...");
+                Console.ReadKey();
+                Console.WriteLine("Desompresion Completada. Presione una tecla para terminar...");
+                Console.ReadKey();
             }
             catch (Exception e)
             {
-                Console.WriteLine("Ubicacion o nombre del archivo incorrectos");
+                Console.WriteLine("Ubicacion o nombre del archivo incorrectos...");
+                Console.ReadKey();
             }
-            Console.WriteLine("Compresion Completada. Presione una tecla para continuar...");
-            Console.ReadKey();
-            Console.WriteLine("Desompresion Completada. Presione una tecla para terminar...");
-            Console.ReadKey();
         }
 
         static void createFileE(byte[] data, string pathName)
