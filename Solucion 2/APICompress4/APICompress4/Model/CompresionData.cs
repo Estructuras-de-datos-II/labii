@@ -11,10 +11,10 @@ namespace APICompress4.Model
         public string compressedFile { get; set; }
         public double compresionRatio { get; set; }
         public double compresionFactor { get; set; }
-        public float reduction { get; set; }
+        public double reduction { get; set; }
 
         public CompressionData(string fileName, string compressedFile, double compresionRatio,
-            double compresionFactor, float reduction)
+            double compresionFactor, double reduction)
         {
             this.fileName = fileName;
             this.compressedFile = compressedFile;

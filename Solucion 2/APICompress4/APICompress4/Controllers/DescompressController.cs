@@ -38,7 +38,11 @@ namespace APICompress4.Controllers
                 newFileName = file.FileName.Substring(0, file.FileName.IndexOf('.')) + ".txt";
                 saveFileAfter(fileBytes, path, newFileName);
 
-                CompressionData compress = new CompressionData(file.FileName, Path.Combine(path, newFileName), 1,2,fileBytes.Length/file.Length);
+                double SrazonDeCompresion = Convert.ToDouble((Convert.ToDouble(fileBytes.Length) / Convert.ToDouble(file.Length)) * 100);
+                double SfactorDeCompresion = Convert.ToDouble(100 / SrazonDeCompresion);
+                double SporcentajeDeReduccion = Convert.ToDouble(100 - SrazonDeCompresion);
+
+                CompressionData compress = new CompressionData(file.FileName, Path.Combine(path, newFileName), SrazonDeCompresion, SfactorDeCompresion, SporcentajeDeReduccion);
                 uploadedFiles.Add(compress);
             }
             catch (Exception e)
