@@ -1,4 +1,5 @@
-﻿using Compress;
+﻿//using Compress;
+using Compression;
 using System;
 using System.IO;
 
@@ -15,13 +16,13 @@ namespace ConsoleCompressHuffman
                 string filePath = Console.ReadLine();
 
                 byte[] data = File.ReadAllBytes(filePath);
-                HuffmanCompress x = new HuffmanCompress();
-                byte[] compressedData = x.compress(data);
+                HuffmanCompression huffmanCOmpressor = new HuffmanCompression();
+                byte[] compressedData = huffmanCOmpressor.Compress(data);
+
                 string fileName = filePath.Substring(0, filePath.IndexOf('.'));
                 createFileE(compressedData, fileName);
 
-                HuffmanDescompress y = new HuffmanDescompress();
-                byte[] descompressedData = y.descompress(compressedData);
+                byte[] descompressedData = huffmanCOmpressor.Decompress(compressedData);
                 createFileD(descompressedData, fileName);
             }
             catch (Exception e)

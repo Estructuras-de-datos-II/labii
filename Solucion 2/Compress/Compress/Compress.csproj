@@ -8,4 +8,10 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="System.Runtime.Serialization.Formatters">
+      <HintPath>..\..\System.Runtime.Serialization.Formatters.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

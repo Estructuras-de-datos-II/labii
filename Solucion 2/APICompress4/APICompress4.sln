@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Compress", "..\Compress\Com
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleCompressHuffman", "..\ConsoleCompressHuffman\ConsoleCompressHuffman\ConsoleCompressHuffman.csproj", "{3BBBA53B-BDF8-4B2D-9F73-6C8E1CAD7C7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleLZW", "..\ConsoleCompressLZW\CompressCon\ConsoleLZW.csproj", "{A8B0D302-B3DD-40E6-B7C1-4C861F34D99B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{3BBBA53B-BDF8-4B2D-9F73-6C8E1CAD7C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BBBA53B-BDF8-4B2D-9F73-6C8E1CAD7C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BBBA53B-BDF8-4B2D-9F73-6C8E1CAD7C7B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A8B0D302-B3DD-40E6-B7C1-4C861F34D99B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A8B0D302-B3DD-40E6-B7C1-4C861F34D99B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A8B0D302-B3DD-40E6-B7C1-4C861F34D99B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A8B0D302-B3DD-40E6-B7C1-4C861F34D99B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

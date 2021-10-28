@@ -12,10 +12,10 @@ namespace APICompress4.Controllers
     [ApiController]
     public class CompressIController : ControllerBase
     {
-        public static List<Compression> uploadedFiles = new List<Compression>();
+        public static List<CompressionData> uploadedFiles = new List<CompressionData>();
 
         [HttpGet]
-        public ActionResult<List<Compression>> compressions()
+        public ActionResult<List<CompressionData>> compressions()
         {
             return uploadedFiles;
         }
