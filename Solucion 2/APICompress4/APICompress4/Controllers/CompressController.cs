@@ -38,8 +38,11 @@ namespace APICompress4.Controllers
                 }
                 saveFileAfter(fileBytes, path, name + ".huff");
 
-                CompressionData compress = new CompressionData(file.FileName, Path.Combine(path, newFileName), 1, 2, fileBytes.Length / file.Length);
-                uploadedFiles.Add(compress);
+                double SrazonDeCompresion = Convert.ToDouble((Convert.ToDouble(fileBytes.Length) / Convert.ToDouble(file.Length)) * 100);
+                double SfactorDeCompresion = Convert.ToDouble(100 / SrazonDeCompresion);
+                double SporcentajeDeReduccion = Convert.ToDouble(100 - SrazonDeCompresion);
+
+                CompressionData compress = new CompressionData(file.FileName, Path.Combine(path, newFileName), SrazonDeCompresion, SfactorDeCompresion, SporcentajeDeReduccion);
 
             }
             catch(Exception e)
