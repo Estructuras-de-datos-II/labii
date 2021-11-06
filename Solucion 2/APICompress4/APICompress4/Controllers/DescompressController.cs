@@ -12,7 +12,7 @@ using Compression;
 
 namespace APICompress4.Controllers
 {
-    [Route("api/descompress")]
+    [Route("api/decompress")]
     [ApiController]
     public class DescompressController : CompressIController
     {

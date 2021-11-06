@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace APICompress4.Controllers
 {
-    [Route("api/lzwdescompress")]
+    [Route("api/lzwdecompress")]
     [ApiController]
     public class LZWDescompressController : CompressIController
     {
