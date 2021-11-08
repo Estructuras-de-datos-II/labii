@@ -18,55 +18,42 @@ namespace APICompress4.Controllers
         public ActionResult<string> descompress([FromForm]List<IFormFile> files)
         {
             string path = Path.Combine("../..", "Archivos");
-            string newFileName = "f";
+            
+            byte[] fileBytes = null;
             try
             {
                 IFormFile file = files[0];
-                saveFile(file, path);
-                //compression
-                byte[] fileBytes = null;
+                
                 using (var ms = new MemoryStream())
                 {
                     file.CopyTo(ms);
                     fileBytes = ms.ToArray();
                     fileBytes = LZWCompresscs.LzwDecompress(fileBytes);
                 }
-                newFileName = file.FileName.Substring(0, file.FileName.IndexOf('.')) + ".txt";
-                saveFileAfter(fileBytes, path, newFileName);
 
                 double SrazonDeCompresion = Convert.ToDouble((Convert.ToDouble(fileBytes.Length) / Convert.ToDouble(file.Length)) * 100);
                 double SfactorDeCompresion = Convert.ToDouble(100 / SrazonDeCompresion);
                 double SporcentajeDeReduccion = Convert.ToDouble(100 - SrazonDeCompresion);
-
-                CompressionData compress = new CompressionData(file.FileName, Path.Combine(path, newFileName), SrazonDeCompresion, SfactorDeCompresion, SporcentajeDeReduccion);
+                CompressionData compress = new CompressionData(file.FileName, Path.Combine(path, file.FileName), SrazonDeCompresion, SfactorDeCompresion, SporcentajeDeReduccion);
                 uploadedFiles.Add(compress);
+                string fileWihoutExtension = file.FileName.Substring(0, file.FileName.IndexOf('.'));
+                string newFileName = fileWihoutExtension + ".txt";
+                var cd = new System.Net.Mime.ContentDisposition
+                {
+                    FileName = newFileName,
+                    Inline = true,
+                };
+
+                Response.Headers.Add("Content-Disposition", cd.ToString());
+
+                return File(fileBytes, "text/plain");
             }
             catch (Exception e)
             {
-                Console.WriteLine(e + "\n\n\n");
                 StatusCodeResult x = new StatusCodeResult(StatusCodes.Status500InternalServerError);
                 return x;
             }
-
-            return newFileName; 
         }
 
-        private string saveFile(IFormFile file, string path)
-        {
-            string fileName = Path.GetFileName(file.FileName);
-            using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
-            {
-                file.CopyTo(stream);
-            }
-            return Path.Combine(path, fileName);
-        }
-
-        private void saveFileAfter(byte[] fileData, string path, string fileName)
-        {
-            using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
-            {
-                stream.Write(fileData, 0, fileData.Length);
-            }
-        }
     }
 }

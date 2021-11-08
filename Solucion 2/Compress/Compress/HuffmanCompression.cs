@@ -270,12 +270,7 @@ namespace Compression
             {
                 return new bool[] { false };
             }
-            // convert ushort to bits
-            // high bits first
-            // e.g.
-            // ushort: 00000000 00001010  =  10
-            // bin: 1010
-            // shift = 3;
+
             int shift = 15;
             ushort mask = 0x0001;
             while (p >> shift != 1)

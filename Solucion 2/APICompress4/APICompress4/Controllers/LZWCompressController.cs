@@ -18,25 +18,24 @@ namespace APICompress4.Controllers
         public ActionResult<string> compress([FromForm]List<IFormFile> files, string name)
         {
             string path = Path.Combine("../..", "Archivos");
-            string newFileName = "f";
+            
             IFormFile file = files[0];
+            byte[] fileBytes = null;
             try
             {
 
-                byte[] fileBytes = null;
+                
                 using (var ms = new MemoryStream())
                 {
                     file.CopyTo(ms);
                     fileBytes = ms.ToArray();
                     fileBytes = LZWCompresscs.LzwCompress(fileBytes);
                 }
-                saveFileAfter(fileBytes, path, name + ".lzw");
 
                 double SrazonDeCompresion = Convert.ToDouble((Convert.ToDouble(fileBytes.Length) / Convert.ToDouble(file.Length)) * 100);
                 double SfactorDeCompresion = Convert.ToDouble(100 / SrazonDeCompresion);
                 double SporcentajeDeReduccion = Convert.ToDouble(100 - SrazonDeCompresion);
-
-                CompressionData compress = new CompressionData(file.FileName, Path.Combine(path, newFileName), SrazonDeCompresion, SfactorDeCompresion, SporcentajeDeReduccion);
+                CompressionData compress = new CompressionData(file.FileName, Path.Combine(path, file.FileName), SrazonDeCompresion, SfactorDeCompresion, SporcentajeDeReduccion);
                 uploadedFiles.Add(compress);
 
             }
@@ -45,28 +44,16 @@ namespace APICompress4.Controllers
                 StatusCodeResult x = new StatusCodeResult(StatusCodes.Status500InternalServerError);
                 return x;
             }
-
-            return file.FileName;
-        }
-
-        private string saveFile(IFormFile file, string path)
-        {
-            string fileName = Path.GetFileName(file.FileName);
-            using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
+            string newFileName = name + ".lzw";
+            var cd = new System.Net.Mime.ContentDisposition
             {
-                file.CopyTo(stream);
-                //uploadedFiles.Add(fileName);
-            }
-            return Path.Combine(path, fileName);
-        }
+                FileName = newFileName,
+                Inline = true,
+            };
 
-        private void saveFileAfter(byte[] fileData, string path, string fileName)
-        {
-            using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
-            {
-                stream.Write(fileData, 0, fileData.Length);
-                //uploadedFiles.Add(fileName);
-            }
+            Response.Headers.Add("Content-Disposition", cd.ToString());
+
+            return File(fileBytes, "text/plain");
         }
     }
 }
