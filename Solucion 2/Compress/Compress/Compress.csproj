@@ -9,8 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Runtime.Serialization.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization.Formatters">
-      <HintPath>..\..\System.Runtime.Serialization.Formatters.dll</HintPath>
+      <HintPath>C:\Users\marti\Downloads\labhuff\System.Runtime.Serialization.Formatters.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Runtime.Serialization.Formatters.Soap.dll</HintPath>
     </Reference>
   </ItemGroup>
 
